@@ -1,0 +1,20 @@
+# cache folders
+__pycache__/
+.pytest_cache/
+
+# Virtual env
+.venv
+.env
+
+# Pycharm folder
+.idea/
+
+# Flask log files
+*flask.log
+
+# Coverage files
+.coverage
+
+# GUnicorn log files
+*gunicorn-error.log
+*gunicorn.log
