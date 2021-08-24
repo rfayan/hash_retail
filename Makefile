@@ -23,7 +23,7 @@ typing:  ## Run static type checks with mypy
 	-mypy hash_retail
 
 run:  ## Start local development server with uvicorn auto-reload
-	uvicorn hash_retail.main:app --reload --host $(HOST) --port $(PORT)
+	uvicorn hash_retail.main:app --reload --host $(API_HOST) --port $(API_PORT)
 
 populate-db:  ## Populate PostgreSQL DB with contents of products.json
 	python populate_db.py
