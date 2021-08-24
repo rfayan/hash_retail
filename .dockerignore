@@ -1,0 +1,12 @@
+# Ignore all files and folders
+*
+
+# Except the following ones:
+
+## Dependencies
+!Pipfile
+!Pipfile.lock
+
+## Source files
+!hash_retail
+!VERSION.txt

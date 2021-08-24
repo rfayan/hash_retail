@@ -1,0 +1,30 @@
+version: "3.5"
+
+services:
+  api:
+    build: .
+    image: hashorg/hash-retail-backend
+    ports:
+      - ${API_PORT}:8000
+    depends_on:
+      - grpc
+      - db
+    env_file:
+      - .env
+    environment:
+      - DATABASE_HOST=db
+      - DATABASE_PORT=5432
+      - GRPC_HOST=grpc
+      - GRPC_PORT=50051
+  grpc:
+    image: hashorg/hash-mock-discount-service
+    ports:
+      - ${GRPC_PORT}:50051  # Publishing this port is not necessary, but can help local development/debug
+  db:
+    image: postgres:12.8
+    environment:
+      - POSTGRES_DB=${DATABASE_NAME}
+      - POSTGRES_USER=${DATABASE_USERNAME}
+      - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
+    ports:
+      - ${DATABASE_PORT}:5432  # Publishing this port is not necessary, but can help local development/debug
