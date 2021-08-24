@@ -1,0 +1,32 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+fastapi = "==0.68.0"
+uvicorn = "*"
+aiofiles = "*"
+sqlalchemy = {extras = ["mypy"], version = "*"}
+psycopg2-binary = "*"
+grpcio = "*"
+gunicorn = "*"
+typing-extensions = "*"
+grpcio-tools = "*"
+
+[dev-packages]
+black = "*"
+pylint = "*"
+isort = "*"
+pre-commit = "*"
+mypy = "*"
+requests = "*"
+pytest = "*"
+pytest-mock = "*"
+coverage = "*"
+
+[requires]
+python_version = "3.8"
+
+[pipenv]
+allow_prereleases = true
