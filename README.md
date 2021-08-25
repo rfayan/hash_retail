@@ -25,10 +25,38 @@ A set of rules were given, they are as follows:
 Further information can be found at the
 [Company's challenge github page](https://github.com/hashlab/hiring/tree/master/challenges/pt-br/new-backend-challenge).
 
+
 ## Developed Solution
 
-TODO
+For constructing the API, the following technologies were used:
 
+- [Python](https://www.python.org/): Python is an interpreted, dynamically typed and garbage-collected
+  high-level programming language and one of the most popular nowadays. It is commonly used for 
+  web and API development since many operations are bottlenecked by IO operations and not held by
+  the interpreted nature of the language.
+- [FastAPI Framework](https://fastapi.tiangolo.com/): FastAPI is a web framework for
+  building APIs with ease in a concise, clear and efficient way. It includes most of
+  the commonly used features by packaging external tools with it, such as data validation
+  with Pydantic, automatic documentation using Swagger/ReDoc with OpenAPI 3.0 specification,
+  support for asynchronous code and many others. It provides all of  this while making most
+  of the features/tools optional, providing flexibility and performance.
+- [PostgreSQL Database](https://www.postgresql.org/): PostgreSQL is a relational open source
+  database ready for production workloads. When dealing with structured data, SQL databases
+  are usually preferred due to better query performance and data integrity, and PostgreSQL
+  is one of the most mature tools available.
+- [SQLAlchemy](https://www.sqlalchemy.org/): SQLAlchemy is an Object Relational Mapper (ORM)
+  package for Python, used to interact with PostgreSQL and create models for manipulation.
+- [Pytest](https://docs.pytest.org/en/stable/): Pytest is a test framework for Python that
+  aims to be clear, concise and modular. Compared to unittest, it is less verbose and has
+  additional features such as html report generation, parallel execution, parameterization
+  and labeling, etc.
+- [Docker](https://www.docker.com/): Docker is a platform for building, sharing and running
+  containerized software applications. With Docker, we are able to create an isolated environment
+  with the bare minimum installed dependencies for running our application, giving us reproducibility
+  and control over how to deploy it.
+- [Docker Compose](https://docs.docker.com/compose/): Docker Compose is a tool to define
+  and run multi-container Docker application with a YAML configuration file, setting up
+  all components of the application in a controlled and configurable environment.
 
 
 ## How to run
@@ -49,13 +77,14 @@ First of all, clone this git repository with
 
 This will create a folder in you current directory with the repository contents inside.
 
+
 ### Setting up Python and its dependencies
 
 Inside the project folder, the `.python-version` specifies that our desired Python version is 3.8. 
 There are multiple ways and tools to help you with this, choose what's best for you.
 
-If you are using [pyenv](https://github.com/pyenv/pyenv) you can easily install it with `pyenv install 3.8.11`, 
-and after that it should automatically detect and change to the correct version.
+If you are using [pyenv](https://github.com/pyenv/pyenv) you can easily install it with
+`pyenv install 3.8.11`, and after that it should automatically detect and change to the correct version.
 
 Check that you have the correct version:
 ```
@@ -86,9 +115,9 @@ And verify if it is active by looking at the path returned with
 
 If the path ends with `env/bin/python` everything is working as expected.
 
-Lastly, we need to install the project dependencies, they are listed in `Pipfile` and `Pipfile.lock` and are
-managed using [Pipenv](https://pipenv.pypa.io/en/latest/). Pipenv can be installed using the package manager
-of your distro or even pip itself, by running
+Lastly, we need to install the project dependencies, they are listed in `Pipfile` and `Pipfile.lock`
+and are managed using [Pipenv](https://pipenv.pypa.io/en/latest/). Pipenv can be installed using the
+package manager of your distro or even pip itself, by running
 
 ```
 ❯ pip install pipenv
@@ -101,6 +130,7 @@ Afterwards, we need will install the package in Pipfile with
 ```
 
 After one or two minutes, all python dependencies should be installed.
+
 
 ### Running with Docker and Docker-Compose
 
@@ -131,6 +161,7 @@ The status of the Docker containers can be queried with `docker container ls`.
 
 After a while, go to your browser on localhost:8000 (or any other port you may have chosen), and you should
 be redirected to an interactive Swagger documentation containing the API description and its endpoints!
+
 
 ### Populating the PostgreSQL Database with Products
 
@@ -191,6 +222,7 @@ even curl itself with [JQ parser](https://stedolan.github.io/jq/).
   ]
 }
 ```
+
 
 ## Running Unit Tests
 
