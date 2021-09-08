@@ -25,6 +25,7 @@ pytest = "*"
 pytest-mock = "*"
 coverage = "*"
 flake8 = "*"
+diagrams = "*"
 
 [requires]
 python_version = "3.8"

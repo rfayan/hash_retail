@@ -235,3 +235,8 @@ There is a target in the Makefile that runs pytest using [coverage](https://cove
 
 This will execute the test suite in the folder `tests` in the project root directory, show the
 pytest execution results and print a coverage report.
+
+
+## Example Microservice Architecture
+
+![Example Microservice Architecture](./diagrams/hash_retail_backend_api_microservice_architecture.png)
