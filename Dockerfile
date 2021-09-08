@@ -43,6 +43,6 @@ WORKDIR /app
 COPY hash_retail /app/hash_retail
 COPY ./VERSION.txt /app
 
-# Expose port 80 and run Biometrics API with gunicorn WSGI as a manager for uvicorn ASGI server with 8 workers
-EXPOSE 80
+# Expose port 8000 and run API with gunicorn WSGI as a manager for uvicorn ASGI server with 8 workers
+EXPOSE 8000
 ENTRYPOINT ["gunicorn", "hash_retail.main:app", "-b", "0.0.0.0:8000", "-k", "uvicorn.workers.UvicornWorker", "-w", "8", "--preload"]
